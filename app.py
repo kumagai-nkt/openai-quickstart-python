@@ -12,6 +12,7 @@ def index():
     if request.method == "POST":
         animal = request.form["animal"]
         response = openai.Completion.create(
+            # model="gpt-3.5-turbo",
             model="text-davinci-003",
             prompt=generate_prompt(animal),
             temperature=0.6,
